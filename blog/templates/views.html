@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Visitor{% endblock %}
+
+<div class="container">
+    {% block content %}
+    <h1>hello developer here is all my post</h1> <hr><br>
+        <div class="alert alert-success" role="alert">
+            <h3 class = "text-center">Total Visitor : {{count}}</h3>
+        </div><br>
+         <a href="{% url 'home' %}"> <span class="btn btn-success">Back Post</span> </a>
+    {% endblock %}
+</div>

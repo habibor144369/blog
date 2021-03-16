@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}artical{% endblock %}
+
+{% block stylesheet %}
+<style>
+    p {
+    font-size: 19px;
+    text-align: justify;
+}
+a {
+    text-decoration: underline;
+    text-decoration: none;
+}
+ol, ul {
+    padding-left: 2rem;
+    list-style: none;
+}
+.h4, h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+img, svg {
+    vertical-align: middle;
+    margin: 10px 30px;
+    height: 350px;
+    width: 340px;
+    border-radius: 6px;
+
+}
+</style>
+{% endblock %}
+
+<div class="container">
+    {% block content %}
+        <h1>Hello Developer</h1> <br> <br>
+        <div class="contaner">
+            <h2>{{object.title}}</h2>
+            <h5>Author : <span> {{object.author.first_name}} {{object.author.last_name}}</span> </h5> 
+            <h5>Date : {{object.date}}</h5> <hr> <br>
+            <p>{{object.body | safe}}</p> <br> <br>
+
+            <a href="{% url 'home' %}"> <span class="btn btn-success">Back Post</span> </a>
+
+        </div> <br> <br>
+        
+    {% endblock %}
+</div>
+
+
+
+{% block script %}
+
+{% endblock %}

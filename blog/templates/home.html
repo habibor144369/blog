@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}home{% endblock %}
+
+{% block stylesheet %}
+    <style>
+        a {
+            color: #0d6efd;
+            text-decoration: underline;
+            text-decoration: none;
+        }
+    </style>
+{% endblock stylesheet %}
+
+<div class="container">
+    {% block content %}
+    <h1>hello developer here is all my post</h1> <hr><br>
+        <div class="alert alert-success" role="alert">
+            <h3 class = "text-center">Total Post : {{obj.count}} &nbsp &nbsp  <span><a class="btn btn-success" href="{% url 'hello'%}">Tottal Visitor</a></span></h3>
+        </div> <br>
+       
+        {% for post in obj %}
+            <h5><a href="{% url 'artical' post.pk post.slug %}"> {{forloop.counter}} - {{post.title}}</a> &nbsp -- &nbsp <span> Date - {{post.date}}</span></h5> <br>
+        {% endfor %} 
+    {% endblock %}
+</div>
+
+
+{% block script %}
+
+{% endblock %}
