@@ -10,7 +10,7 @@ class Post(models.Model):
     title = models.CharField(max_length=250) 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
-    key = models.CharField(max_length=50, unique=True)
+    key = models.CharField(max_length=300, unique=True)
     slug = models.SlugField(unique=True, null=True, blank=True, allow_unicode=True)
     
     def __str__(self):
