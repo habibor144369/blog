@@ -7,7 +7,7 @@ from django.utils.text import slugify
 
 class Post(models.Model):
     date = models.DateField(auto_now=False, auto_now_add=True)
-    title = models.CharField(max_length=250) 
+    title = models.CharField(max_length=500) 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
     key = models.CharField(max_length=300, unique=True)
