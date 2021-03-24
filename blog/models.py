@@ -8,10 +8,10 @@ from django.utils.text import slugify
 
 class Post(models.Model):
     date = models.DateField(auto_now=False, auto_now_add=True)
-    title = models.CharField(max_length=20) 
+    title = models.CharField(max_length=150) 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
-    key = models.CharField(max_length=20, unique=True)
+    key = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(unique=True, null=True, blank=True, allow_unicode=True)
     
     def __str__(self):
