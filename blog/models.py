@@ -40,15 +40,6 @@ class Information(models.Model):
     def __str__(self):
         return self.name
 
-class Detail(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=150)
-    profation = models.CharField(max_length=150)
-    age = models.IntegerField()
-    phone = models.IntegerField()
-    address = models.CharField(max_length=150)
 
-    def __str__(self):
-        return self.name
 
         
