@@ -7,10 +7,10 @@ from django.utils.text import slugify
 
 class Post(models.Model):
     date = models.DateField(auto_now=False, auto_now_add=True)
-    title = models.CharField(max_length=600) 
+    title = models.CharField() 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = RichTextField(blank=True, null=True)
-    key = models.CharField(max_length=600, unique=True)
+    key = models.CharField(unique=True)
     slug = models.SlugField(unique=True, null=True, blank=True, allow_unicode=True)
     
     def __str__(self):
